@@ -1,7 +1,7 @@
 # PHP Website Example - Sakura Translation
 *Fake Translation Service Website with PHP, vanilla JavaScript, CSS and HTML with Oracle Database*
 
-A classic desktop PHP website without using any framework. No React or Angular, not even JQuery. No bootstrap. Just plain CSS. It will run in any Apache server with PHP and connection to Oracle database.
+A classic desktop PHP website without using any framework. No framework like React or Angular, not even JQuery. No bootstrap. Just plain Javascript, CSS and good ol' PHP! Instead of using the usual MySQL as a backend database, it is using Oracle database.
 
 Run allSQL to create tables and insert data. 
 
