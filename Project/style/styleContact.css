@@ -1,0 +1,101 @@
+.contactHeading{
+   
+    background-color:#f2f2f2;
+    padding: 10px 10px;
+}
+
+#contactTable{
+    width: 70%;
+    float: left;
+    margin-left: 10px;
+    border-spacing: 10px 10px;
+}
+
+#contactTable th{
+    text-align: left;
+    font-size: 20px;
+}
+#contactTable td{
+    font-size: 20px;
+}
+
+/* Styling contact form */
+#formdiv{
+    width: 300px;
+    float: right;
+    margin-right: 20px;
+}
+
+#contactForm{
+    border:none;
+    border-radius: 10px;
+    background-color: #000099;
+    
+}
+
+#contactForm table{
+    border-spacing: 10px;
+    width: 300px;
+}
+
+#contactForm table td{
+    text-align: center
+}
+
+#contactForm h4{
+    margin: 5px;
+    padding: 10px;
+    color: azure;
+    text-align: center;
+}
+
+#contactForm textarea{
+   height: 150px;
+   width: 180px;
+   border-radius: 5px;
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
+#contactForm input{
+    height: 30px;
+    width: 180px;
+    border-radius: 5px;
+   
+}
+
+#contactForm button{
+    width: 180px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    height: 25px;
+    color: azure;
+    background-color:  #0d0d0d;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}
+
+#feedbackP{
+    margin-left: 10px;
+}
+
+#poll fieldset{
+    border: 2px  #b3b3b3 solid;
+}
+
+#poll textarea{
+    width: 70%;
+    height: 200px;
+    font-size: 20px;
+    
+}
+#poll button{
+    width: 250px;
+    margin-bottom: 5px;
+    border-radius: 5px;
+    height: 25px;
+    color: azure;
+    background-color:  #000099;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+}

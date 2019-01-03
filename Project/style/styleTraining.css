@@ -1,0 +1,34 @@
+#trainingImg{
+    
+    float: right;
+    margin: 0px 0px;
+    width: 40%;    
+}
+
+#trainingWords{
+    
+    float: left;
+    width: 50%;
+    margin-left: 10px;
+}
+
+#program{
+    
+    width: 80%;
+    border-spacing: 5px 5px;
+}
+#program tr{
+    height: 200px;
+    vertical-align: top;
+}
+#program td{
+    background-color: #f2f2f2;
+    padding-left: 20px;
+    padding-right: 10px;
+    border-radius: 10px;
+    font-size: 20px;
+}
+
+#programs{
+    margin-left: 10px;
+}

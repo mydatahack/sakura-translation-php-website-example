@@ -1,0 +1,206 @@
+DROP TABLE Product;
+Create Table Product (
+  ID varchar(10) Not Null,
+  Type varchar(20) Not Null,
+  Service varchar(50) Not Null,
+  DESCR varchar(1000),
+  Price varchar(50),
+  CreatedDate TIMESTAMP DEFAULT (sysdate),
+  LastUpdatedDate TIMESTAMP DEFAULT (sysdate),
+  CONSTRAINT pk_id PRIMARY KEY (ID)
+);
+
+INSERT INTO Product VALUES ('TJE1', 'Japanese to English', 'Technical Translation', 
+'We can translate any technical documents, including instructions for hardware, software, mechanical equipment, engineering products, and more.',
+'$200 per 100 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE2', 'Japanese to English', 'Legal Translation', 'We can translate any legal documents, including contracts, certifications, driver licence and court documents and more.',
+'$250 per 100 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE3', 'Japanese to English', 'Scientific Translation', 
+'We can translate any scientific writing, including journal papers, conference synopsis, lab notebooks, and more.',
+'$200 per 100 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE4', 'Japanese to English', 'Financial Translation', 
+'We can translate any financial/ accounting documents, including official and unofficial documents.',
+'$180 per 100 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE5', 'Japanese to English', 'Business Translation', 
+'We can translate any business-related documents, including articles, journal papers, conference presentations, emails.',
+'$150 per 100 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE6', 'Japanese to English', 'Journalism Translation', 
+'We can translate any news and featured articles.',
+'$180 per 100 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE7', 'Japanese to English', 'Website Translation', 
+'We offer localisation translation to transform your websites to suit the local market.',
+'$150 per 100 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE8', 'Japanese to English', 'Literary Translation', 
+'We can translate any fiction and non-fiction writing. ',
+'$400 per 100 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE9', 'Japanese to English', 'On Site Translation', 
+'Our translators can work on site for your project or sensitive documents. ',
+'Negotiable', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TEJ10', 'English to Japanese', 'Technical Translation', 
+'We can translate any technical documents, including instructions for hardware, software, mechanical equipment, engineering products, and more.',
+'$200 per 200 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TEJ11', 'English to Japanese', 'Legal Translation', 'We can translate any legal documents, including contracts, certifications, driver licence and court documents and more.',
+'$250 per 200 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TEJ12', 'English to Japanese', 'Scientific Translation', 
+'We can translate any scientific writing, including journal papers, conference synopsis, lab notebooks, and more.',
+'$200 per 200 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TEJ13', 'English to Japanese', 'Financial Translation', 
+'We can translate any financial/ accounting documents, including official and unofficial documents.',
+'$180 per 200 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TEJ14', 'English to Japanese', 'Business Translation', 
+'We can translate any business-related documents, including articles, journal papers, conference presentations, emails.',
+'$150 per 200 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TEJ15', 'English to Japanese', 'Journalism Translation', 
+'We can translate any news and featured articles.',
+'$180 per 200 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TEJ16', 'English to Japanese', 'Website Translation', 
+'We offer localisation translation to transform your websites to suit the local market.',
+'$150 per 200 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE17', 'English to Japanese', 'Literary Translation', 
+'We can translate any fiction and non-fiction writing. ',
+'$400 per 200 words', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('TJE18', 'English to Japanese', 'On Site Translation', 
+'Our translators can work on site for your project or sensitive documents.',
+'Negotiable', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('CTP1', 'Training Program', 'Leadership Program', 
+'Our 3-day leadership programs will prepare you to become an effective leader in multi-cultural teams.',
+'$1500 per person', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('CTP2', 'Training Program', 'Business Negotiation', 
+'Our 2-day business negotiation program will improve your negotiation skills with Japnanese clients.',
+'$1000 per person', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('CTP3', 'Training Program', 'Business Conversation', 
+'The program aims to improve your Japanese business conversation skills that will help you to communicate effectively with Japanese clients. It consists of 5 sessions.',
+'$190 per session per person', sysdate, sysdate);
+
+
+INSERT INTO Product VALUES ('CTP4', 'Training Program', 'Business Culture', 
+'You will learn the idiocincracies of Japanese business culture. This program is for 2 days. Understanding Japanese business culture will increase productivity working with Japanes clients.',
+'$1000 per person', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('CTP5', 'Training Program', 'Business Letter Writing', 
+'Do you need to improve your Japanese business wrting skills? This program will help you to sharpen your Japanese writing skills for effective Japanese email and letter writing. It consists of 5 sessions.',
+'$190 per session per person', sysdate, sysdate);
+
+INSERT INTO Product VALUES ('CTP6', 'Training Program', 'Customised Training Programs', 
+'We can offer customised training programs. We can tailor our programs to what you request. We are happy to work with you to develop your custom training programs.',
+'Negotiable', sysdate, sysdate);
+COMMIT;
+
+
+
+DROP TABLE OrderTable;
+CREATE TABLE OrderTable (
+  ID Number(10) Not Null,
+  Firstname varchar(50) Not Null,
+  Lastname varchar(50) Not Null,
+  Company varchar(50),
+  Email varchar(50) Not Null,
+  Phone varchar(50) Not Null,
+  ProductKey varchar(10) Not Null,
+  WordCount Number(4) Not Null,
+  Details varchar(1000),
+  CreatedDate TIMESTAMP DEFAULT (sysdate),
+  CONSTRAINT order_pk PRIMARY KEY (ID),
+  CONSTRAINT productkey_fk FOREIGN KEY (ProductKey) REFERENCES Product(ID)
+);
+
+INSERT INTO OrderTable VALUES (1, 'John', 'Smith', 'STY Corp', 'johns@stycorp.com', '0323421234', 'TJE4', 1500, 'hello world', sysdate);
+COMMIT;
+
+
+
+DROP TABLE Login;
+CREATE TABLE Login(
+
+        ID NUMBER(4) NOT NULL,
+        USERNAME VARCHAR2(50),
+        PASSWORD VARCHAR2(20),
+        Primary key (ID)
+);
+INSERT INTO Login VALUES (1, 'john', 'john08');
+INSERT INTO Login VALUES (2, 'nicole', 'nic');
+INSERT INTO Login VALUES (3, 'james', 'james');
+INSERT INTO Login VALUES (4, 'samantha', 'sam21');
+INSERT INTO Login VALUES (5, 'admin', 'admin');
+COMMIT;
+
+
+DROP TABLE Feedback;
+CREATE TABLE Feedback (
+  ID Number(4) Not Null,
+  Type varchar(20) Not Null,
+  Q1 varchar(20),
+  Q2 varchar(20),
+  CommentText varchar(1000),
+  CreatedDate TIMESTAMP DEFAULT (sysdate),
+  CONSTRAINT feedback_pk PRIMARY KEY (ID)
+);
+
+INSERT INTO Feedback VALUES (1, 'Japanese to English', 'Satisfied', 'Likely', 'Very good', sysdate);
+INSERT INTO Feedback VALUES (2, 'Japanese to English', 'Unsatisfied', 'Unlikely', 'Not happy', sysdate); 
+INSERT INTO Feedback VALUES (3, 'Japanese to English', 'Not Sure', 'Not Sure', 'No comment', sysdate); 
+INSERT INTO Feedback VALUES (4, 'Japanese to English', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (5, 'Japanese to English', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (6, 'Japanese to English', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (7, 'Japanese to English', 'Not Sure', 'Unlikely', 'Not really sure', sysdate); 
+INSERT INTO Feedback VALUES (8, 'Japanese to English', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (9, 'Japanese to English', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (10, 'Japanese to English', 'Satisfied', 'Likely', 'Very excellent', sysdate);
+
+INSERT INTO Feedback VALUES (11, 'English to Japanese', 'Satisfied', 'Likely', 'Very good', sysdate);
+INSERT INTO Feedback VALUES (12, 'English to Japanese', 'Unsatisfied', 'Unlikely', 'Not happy', sysdate); 
+INSERT INTO Feedback VALUES (13, 'English to Japanese', 'Not Sure', 'Not Sure', 'No comment', sysdate); 
+INSERT INTO Feedback VALUES (14, 'English to Japanese', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (15, 'English to Japanese', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (16, 'English to Japanese', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (17, 'English to Japanese', 'Not Sure', 'Unlikely', 'Not really sure', sysdate); 
+INSERT INTO Feedback VALUES (18, 'English to Japanese', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (19, 'English to Japanese', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (20, 'English to Japanese', 'Satisfied', 'Likely', 'Very excellent', sysdate);  
+
+INSERT INTO Feedback VALUES (21, 'Training Program', 'Satisfied', 'Likely', 'Very good', sysdate);
+INSERT INTO Feedback VALUES (22, 'Training Program', 'Unsatisfied', 'Unlikely', 'Not happy', sysdate); 
+INSERT INTO Feedback VALUES (23, 'Training Program', 'Not Sure', 'Not Sure', 'No comment', sysdate); 
+INSERT INTO Feedback VALUES (24, 'Training Program', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (25, 'Training Program', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (26, 'Training Program', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (27, 'Training Program', 'Not Sure', 'Unlikely', 'Not really sure', sysdate); 
+INSERT INTO Feedback VALUES (28, 'Training Program', 'Satisfied', 'Likely', 'Very excellent', sysdate); 
+INSERT INTO Feedback VALUES (29, 'Training Program', 'Unsatisfied', 'Not Sure', 'Do better', sysdate); 
+INSERT INTO Feedback VALUES (30, 'Training Program', 'Satisfied', 'Likely', 'Very excellent', sysdate);
+COMMIT;
+
+
+DROP TABLE Enquiry;
+CREATE TABLE Enquiry (
+  ID Number(10) Not Null,
+  Name varchar(100),
+  Email varchar(50),
+  Phone varchar(50),
+  Enqury varchar(1000),
+  CreatedDate TIMESTAMP DEFAULT(sysdate),
+  CONSTRAINT enquiry_pk PRIMARY KEY (ID)
+);
+
+INSERT INTO Enquiry VALUES (1, 'Phill Sessions', 'psession@mondo.com', '0345239999', 'Hello World', sysdate);
+COMMIT;
