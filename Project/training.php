@@ -1,12 +1,7 @@
 <?php 
-// set the page title for header
     define("TITLE", "Sakura Translation | Training");
     define("Style", "style/styleTraining.css");
-    // setting array for javascript files to load for this page
     $scripts = array('js/nav.js');
-   
-
-// include header.php
     include("header.php");
 ?>
      <main>
@@ -73,7 +68,4 @@
        </div>
        <p> </P>
  </main>
-<?php 
-// include footer.php
-    include("footer.php");
-?> 
+<?php include("footer.php"); ?> 
